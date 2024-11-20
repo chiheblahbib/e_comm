@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+      <form #f="ngForm">
+        <div class="mb-3">
+          <label>Title : </label>
+          <input type="text" class="form-control" name="title" [(ngModel)]="category.title" #title="ngModel" required minlength="3">
+          <app-form-validation [control]="title"></app-form-validation>
+        </div>
+  
+        <div class="mb-3">
+          <label>Image</label>
+          <input type="text" class="form-control" name="image" [(ngModel)]="category.image" #image="ngModel" required>
+          <app-form-validation [control]="image"></app-form-validation>
+          
+        </div>
+  
+        <div class="mb-3">
+          <label>Description :</label>
+          <input type="text" class="form-control" name="description" [(ngModel)]="category.description" #description="ngModel" required minlength="10">
+          <app-form-validation [control]="description"></app-form-validation>
+        </div>
+  
+        <div class="mb-3">
+          <input type="submit" [disabled]="f.invalid" value="Submit" class="btn btn-primary" (click)="add()">
+        </div>
+      </form>
+    </div>
+  </div>
+  
